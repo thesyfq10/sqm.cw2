@@ -28,6 +28,8 @@ $Id: WebServerMain.java,v 1.2 2004/02/01 13:37:35 pjm2 Exp $
 public class WebServerMain {
 
     public static void main(String[] args) {
+    	SLF4J logger =  new SLF4J();
+    	
     	
     	 try
          {
@@ -44,8 +46,9 @@ public class WebServerMain {
                  
                  
              }
-            
+             logger.info("Log information");
          }
+    	 
          catch (IOException ex)
          {
              System.out.println(ex.toString());
