@@ -27,14 +27,15 @@ $Id: WebServerMain.java,v 1.2 2004/02/01 13:37:35 pjm2 Exp $
  */
 public class WebServerMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
     	SLF4J logger =  new SLF4J();
+    	
     	
     	
     	 try
          {
              
-             File myFile = new File("C:/./../workspace/sqmm/webfiles");
+             File myFile = new File("C:/./../workspace/sqm.cw2/webfiles");
              String path = myFile.getCanonicalPath();
 
              // If the file exists, display it's full path.
@@ -53,6 +54,9 @@ public class WebServerMain {
          {
              System.out.println(ex.toString());
          }
+    	 
+    	 WebProperty properties = new WebProperty();
+ 		properties.getPropValues();
         
         String rootDir = WebServerConfig.DEFAULT_ROOT_DIRECTORY;
         int port = WebServerConfig.DEFAULT_PORT;
